@@ -16,7 +16,7 @@ for (let i = 0; i < 16; i++) {
    // }
 
         square.forEach(box => {
-            box.addEventListener('click', () => {
+            box.addEventListener('mouseover', () => {
             box.style.backgroundColor = 'red';    
                
             });
