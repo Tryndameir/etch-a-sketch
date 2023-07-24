@@ -10,13 +10,16 @@ for (let i = 0; i < 16; i++) {
     container.appendChild(div);
     }
 }
-    const square = document.querySelector('.box');
+    const square = document.querySelectorAll('.box');
     //if (square !== null) {
         //console.log(square);
    // }
 
-        square.addEventListener('click', () => {
-        console.log("poopoo");
-        square.style.backgroundColor = "red";
-    });
+        square.forEach(box => {
+            box.addEventListener('click', () => {
+            box.style.backgroundColor = 'red';    
+               
+            });
+        });
+    
     
