@@ -15,9 +15,9 @@ body {
     flex-wrap: wrap;
     max-width: 832px;
     min-width: 832px;
-    
 }
 
-.box {
-
+.box:hover {
+    background-color: red;
 }
+
