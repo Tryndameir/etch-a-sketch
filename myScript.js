@@ -16,10 +16,15 @@ for (let i = 0; i < 16; i++) {
    // }
 
         square.forEach(box => {
-            box.addEventListener('mouseover', () => {
+            box.style.backgroundColor = 'white';
+            box.addEventListener('click', () => {
             box.style.backgroundColor = 'red';    
-               
+            console.log(box.style.backgroundColor);
             });
         });
+
+    
+        
+
     
     

@@ -15,6 +15,14 @@ body {
     flex-wrap: wrap;
     max-width: 832px;
     min-width: 832px;
+    align-self: center;
+    margin-top: 35px;
+}
+
+.button {
+    align-self: center;
+    justify-self: center;
+    margin-top: 20px;
 }
 
 /* .box:hover {
