@@ -1,5 +1,6 @@
 const container = document.querySelector('.container');
 const canvasSize = document.querySelector('.button');
+
 const column = document.createElement('div');
 column.classList.add('box');
 const row = document.createElement('div'); //create a div called boxes
@@ -34,20 +35,25 @@ canvasSize.addEventListener('click', () => { //event listener for when user clic
         }
         container.appendChild(column);
         console.log(size);
+        const square = document.querySelectorAll('.box');
+
     }
+    
 });
 
 
-    const square = document.querySelectorAll('.box');
-    //if (square !== null) {
-        //console.log(square);
-   // }
+const square = document.querySelectorAll('.box');
 
 square.forEach(box => { // event listener for when user clicks inside canvas to sketch
     box.style.backgroundColor = 'white';
     box.addEventListener('click', () => {
-        box.style.backgroundColor = 'red';    
-        console.log(box.style.backgroundColor);
+        if (box.style.backgroundColor == 'red') {
+            box.style.backgroundColor = 'white';
+        }
+
+        else {
+        box.style.backgroundColor = 'red';
+        }    
     });
 });
 
