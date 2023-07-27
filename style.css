@@ -12,14 +12,18 @@ body {
 
 .container {
     display: flex; 
+    flex: 1;
     flex-wrap: wrap;
     /*max-width: 832px;*/
     /*min-width: 832px;*/
     align-self: center;
     justify-content: center;
     margin-top: 35px;
+    margin-bottom: 50px;
     width: 832px;
     height: 832px;
+    position: relative;
+    
 }
 
 .button {
@@ -27,6 +31,7 @@ body {
     justify-self: center;
     margin-top: 20px;
 }
+
 
 /* .box:hover {
     background-color: red;

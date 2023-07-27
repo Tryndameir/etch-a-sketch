@@ -1,42 +1,35 @@
 const container = document.querySelector('.container');
-const canvasSize = document.querySelector('.button');
+const canvasSize = document.querySelector('#btn1');
+const color = document.querySelector('#btn2');
+let box = document.createElement('div');
+//const column = document.createElement('div');
+//column.classList.add('box');
+//const row = document.createElement('div'); //create a div called boxes
+//row.classList.add('box'); //give it a class of 'box'
+let size = 4;
 
-const column = document.createElement('div');
-column.classList.add('box');
-const row = document.createElement('div'); //create a div called boxes
-row.classList.add('box'); //give it a class of 'box'
-let size = 16;
-
-for (let i = 0; i < size; i++) { // loop to generate canvas
-    const column = document.createElement('div');
-    column.classList.add('box');
-    for (let j = 0; j < size; j++) {
-    const row = document.createElement('div');
-    row.style.cssText = 'border: solid; border-width: 1px; border-color: black; width: 50px; height: 50px';
-    row.classList.add('box');
-    column.appendChild(row);
-    }
-    container.appendChild(column);
+for (let i = 0; i < size * size; i++) { // loop to generate canvas
+    let box = document.createElement('div');
+    box.classList.add('box');
+    box.style.cssText = 'border: solid; border-width: 1px; border-color: black';
+    let borderOffset = size * 2;
+    box.style.width = ((832 - borderOffset) / size) + "px";
+    container.appendChild(box);
     console.log(size);
 }
 
 canvasSize.addEventListener('click', () => { //event listener for when user clicks canvasSize botton
     size = prompt("Select canvas size");
-    container.replaceChildren(column, container.children);
+    container.replaceChildren(box, container.children);
     container.innerHTML = "";
-    for (let i = 0; i < size; i++) { // loop to generate canvas
-        const column = document.createElement('div');
-        column.classList.add('box');
-        for (let j = 0; j < size; j++) {
-        const row = document.createElement('div');
-        row.style.cssText = 'border: solid; border-width: 1px; border-color: black; width: 50px; height: 50px';
-        row.classList.add('box');
-        column.appendChild(row);
-        }
-        container.appendChild(column);
+    for (let i = 0; i < size * size; i++) { // loop to generate canvas
+        let box = document.createElement('div');
+        box.classList.add('box');
+        box.style.cssText = 'border: solid; border-width: 1px; border-color: black';
+        let borderOffset = size * 2;
+        box.style.width = ((832 - borderOffset) / size) + "px";
+        container.appendChild(box);
         console.log(size);
-        const square = document.querySelectorAll('.box');
-
     }
     
 });
