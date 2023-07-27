@@ -6,7 +6,7 @@ let box = document.createElement('div');
 //column.classList.add('box');
 //const row = document.createElement('div'); //create a div called boxes
 //row.classList.add('box'); //give it a class of 'box'
-let size = 4;
+let size = 16;
 
 for (let i = 0; i < size * size; i++) { // loop to generate canvas
     let box = document.createElement('div');
@@ -19,19 +19,22 @@ for (let i = 0; i < size * size; i++) { // loop to generate canvas
 }
 
 canvasSize.addEventListener('click', () => { //event listener for when user clicks canvasSize botton
-    size = prompt("Select canvas size");
-    container.replaceChildren(box, container.children);
-    container.innerHTML = "";
-    for (let i = 0; i < size * size; i++) { // loop to generate canvas
-        let box = document.createElement('div');
-        box.classList.add('box');
-        box.style.cssText = 'border: solid; border-width: 1px; border-color: black';
-        let borderOffset = size * 2;
-        box.style.width = ((832 - borderOffset) / size) + "px";
-        container.appendChild(box);
-        console.log(size);
-    }
-    
+        do {
+            size = prompt("Select a canvas size from 4 to 100");
+        }
+        while (size < 4 || size > 100);
+
+            container.replaceChildren(box, container.children);
+            container.innerHTML = "";
+            for (let i = 0; i < size * size; i++) { // loop to generate canvas
+                let box = document.createElement('div');
+                box.classList.add('box');
+                box.style.cssText = 'border: solid; border-width: 1px; border-color: black';
+                let borderOffset = size * 2;
+                box.style.width = ((832 - borderOffset) / size) + "px";
+                container.appendChild(box);
+            }
+
 });
 
 
