@@ -3,6 +3,7 @@ let canvasSize = document.querySelector('#btn1');
 const color = document.querySelector('#btn2');
 let box = document.createElement('div');
 box.style.cssText = 'border: solid; border-width: 1px; border-color: black; background-color: white';
+gridColor = "black";
 //const column = document.createElement('div');
 //column.classList.add('box');
 //const row = document.createElement('div'); //create a div called boxes
@@ -39,14 +40,13 @@ canvasSize.addEventListener('click', () => { //event listener for when user clic
             }
             box = document.querySelectorAll('.box');
     box.forEach(box => { // event listener for when user clicks inside canvas to sketch
-    //box.style.backgroundColor = 'white';
     box.addEventListener('click', () => {
-        if (box.style.backgroundColor == 'red') {
-            box.style.backgroundColor = 'green';
+        if (box.style.backgroundColor == gridColor) {
+            box.style.backgroundColor = 'white';
         }
 
         else {
-        box.style.backgroundColor = 'red';
+        box.style.backgroundColor = gridColor;
         }    
         console.log('clicks');
     });
@@ -61,15 +61,19 @@ box = document.querySelectorAll('.box');
 box.forEach(box => { // event listener for when user clicks inside canvas to sketch
     //box.style.backgroundColor = 'white';
     box.addEventListener('click', () => {
-        if (box.style.backgroundColor == 'red') {
-            box.style.backgroundColor = 'green';
+        if (box.style.backgroundColor == gridColor) {
+            box.style.backgroundColor = 'white';
         }
 
         else {
-        box.style.backgroundColor = 'red';
+        box.style.backgroundColor = gridColor;
         }    
         console.log('clicks');
     });
+});
+
+color.addEventListener('click', () => {
+    gridColor = prompt("Choose Color: ");
 });
 
 
