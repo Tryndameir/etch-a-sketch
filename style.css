@@ -8,6 +8,7 @@ body {
 .body {
     flex: 1;
     display: flex;
+    background-color: burlywood;
 }
 
 .container {
@@ -20,9 +21,10 @@ body {
     justify-content: center;
     margin-top: 35px;
     margin-bottom: 50px;
-    width: 838px;
-    height: 9838px;
+    width: 800px;
+    height: 830px;
     position: relative;
+    background-color: white;
     
 }
 

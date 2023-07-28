@@ -2,12 +2,7 @@ const container = document.querySelector('.container');
 let canvasSize = document.querySelector('#btn1');
 const color = document.querySelector('#btn2');
 let box = document.createElement('div');
-box.style.cssText = 'border: solid; border-width: 1px; border-color: black; background-color: white';
 gridColor = "black";
-//const column = document.createElement('div');
-//column.classList.add('box');
-//const row = document.createElement('div'); //create a div called boxes
-//row.classList.add('box'); //give it a class of 'box'
 let size = 16;
 
 for (let i = 0; i < size * size; i++) { // loop to generate canvas
@@ -15,7 +10,7 @@ for (let i = 0; i < size * size; i++) { // loop to generate canvas
     box.classList.add('box');
     box.style.cssText = 'border: solid; border-width: 1px; border-color: black; background-color: white';
     let borderOffset = size * 1.6;
-    box.style.width = ((832 - borderOffset) / size) + "px";
+    box.style.width = ((800 - borderOffset) / size) + "px";
     container.appendChild(box);
 }
 
@@ -35,10 +30,11 @@ canvasSize.addEventListener('click', () => { //event listener for when user clic
                 box.classList.add('box');
                 box.style.cssText = 'border: solid; border-width: 1px; border-color: black; background-color: white';
                 let borderOffset = size * 1.6;
-                box.style.width = ((832 - borderOffset) / size) + "px";
+                box.style.width = ((800 - borderOffset) / size) + "px";
                 container.appendChild(box);
             }
             box = document.querySelectorAll('.box');
+
     box.forEach(box => { // event listener for when user clicks inside canvas to sketch
     box.addEventListener('click', () => {
         if (box.style.backgroundColor == gridColor) {
@@ -74,6 +70,15 @@ box.forEach(box => { // event listener for when user clicks inside canvas to ske
 
 color.addEventListener('click', () => {
     gridColor = prompt("Choose Color: ");
+});
+
+const clear = document.querySelector('#btn3');
+clear.addEventListener('click', () => {
+
+    for (let i = 0; i < size * size; i++) {
+    box[i].style.backgroundColor = 'white';
+    }
+    console.log("clear clicked");
 });
 
 
