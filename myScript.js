@@ -14,7 +14,7 @@ for (let i = 0; i < size * size; i++) { // loop to generate canvas
     let box = document.createElement('div');
     box.classList.add('box');
     box.style.cssText = 'border: solid; border-width: 1px; border-color: black; background-color: white';
-    let borderOffset = size * 2;
+    let borderOffset = size * 1.6;
     box.style.width = ((832 - borderOffset) / size) + "px";
     container.appendChild(box);
 }
@@ -34,7 +34,7 @@ canvasSize.addEventListener('click', () => { //event listener for when user clic
                 let box = document.createElement('div');
                 box.classList.add('box');
                 box.style.cssText = 'border: solid; border-width: 1px; border-color: black; background-color: white';
-                let borderOffset = size * 2;
+                let borderOffset = size * 1.6;
                 box.style.width = ((832 - borderOffset) / size) + "px";
                 container.appendChild(box);
             }
