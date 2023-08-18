@@ -1,6 +1,6 @@
 const container = document.querySelector('.container');
 let canvasSize = document.querySelector('#btn1');
-const color = document.querySelector('#btn2');
+const colorpicker = document.getElementById('colorpicker');
 let box = document.createElement('div');
 gridColor = "black";
 let size = 16;
@@ -68,9 +68,6 @@ box.forEach(box => { // event listener for when user clicks inside canvas to ske
     });
 });
 
-color.addEventListener('click', () => {
-    gridColor = prompt("Choose Color: ");
-});
 
 const clear = document.querySelector('#btn3');
 clear.addEventListener('click', () => {
@@ -80,6 +77,13 @@ clear.addEventListener('click', () => {
     }
     console.log("clear clicked");
 });
+
+colorpicker.addEventListener("input", function() {
+    gridColor = this.value;
+    console.log(gridColor);
+})
+
+
 
 
     
